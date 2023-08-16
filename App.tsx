@@ -21,6 +21,7 @@ import {
 
 import GoogleSVG from './Assets/Google.svg';
 import GithubSVG from './Assets/Github.svg';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   return (
@@ -43,11 +44,14 @@ const Nav = () => {
       <Image
         style={styles.arrow}
         source={require('./Assets/arrow.png')}></Image>
+
       <Text style={styles.text}>Create Account</Text>
+      <View style={styles.basketandbell}>
       <Image style={styles.bell} source={require('./Assets/bell.png')}></Image>
       <Image
         style={styles.basket}
         source={require('./Assets/Basket.png')}></Image>
+        </View>
     </View>
   );
 };
@@ -154,24 +158,29 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '700',
     lineHeight: 22 /* 137.5% */,
-    left: 58,
+    marginLeft:20
   },
   nav: {
     flex: 1,
     flexDirection: 'row',
-    top: 60,
+    marginTop:20,
+    width:'100%',
+   // backgroundColor:'red',
+    padding:10,
+    
   },
   arrow: {
-    left: 17,
-    top: 2,
+    marginLeft:10,
+    marginTop:2,
+    
   },
   bell: {
-    left: 200,
-    top: 2,
+    marginRight:17,
+    marginTop:3
   },
   basket: {
-    left: 220,
-    top: -2,
+    paddingBottom:6,
+    
   },
   card: {
     marginHorizontal: 15,
@@ -344,6 +353,14 @@ const styles = StyleSheet.create({
     borderColor: 'blue',
     marginRight: 10,
   },
+  basketandbell:{
+    flexDirection:'row',
+    flex:1,
+    justifyContent:'flex-end',
+    alignContent:'flex-end',
+    marginRight:20,
+   // backgroundColor:'red'
+  }
 });
 
 export default App;
