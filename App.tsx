@@ -11,6 +11,7 @@ import {
   Image,
   ImageBackground,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -24,12 +25,14 @@ import GithubSVG from './Assets/Github.svg';
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
-        style={styles.background}
-        source={require('./Assets/BG.png')}>
-        <Nav />
-        <Card />
-      </ImageBackground>
+        <ImageBackground
+          style={styles.background}
+          source={require('./Assets/BG.png')}>
+      <ScrollView>
+          <Nav />
+          <Card />
+      </ScrollView>
+        </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -80,8 +83,8 @@ const Lowercard = () => {
   const checked = require('./Assets/check.png');
   const unChecked = require('./Assets/uncheck.png');
   const checkboxImage = {true: checked, false: unChecked};
- const [isChecked, setChecked] = useState(checkboxImage.false);
-  
+  const [isChecked, setChecked] = useState(checkboxImage.false);
+
   const checkboxChange = () => {
     if (isChecked == checkboxImage.true) {
       setChecked(checkboxImage.false);
@@ -184,6 +187,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 12,
     width: '100%',
+    marginBottom:30,
   },
   lowercard: {
     flex: 3,
@@ -339,7 +343,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'blue',
     marginRight: 10,
-    
   },
 });
 
